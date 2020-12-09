@@ -1,0 +1,75 @@
+@import './mixins';
+
+.pace {
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: fixed;
+    margin: auto;
+    top: -50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 30vw;
+    border: 0px;
+    height: 60px;
+    opacity: 0.7;
+    -webkit-transition: all 1s;
+    background-color: #212529;
+
+    &::before {
+        @include defaultBlock;
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        position: fixed;
+        background-color: #212529;
+    }
+}
+
+.pace.pace-inactive {
+    width: 30vw;
+    // opacity: 0;
+}
+
+.pace.pace-inactive .pace-progress {
+    max-width: 100vw;
+}
+
+.pace-progress {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    z-index: 9999999;
+    max-width: 100vw;
+    position: fixed;
+    display: block;
+    position: absolute;
+    opacity: .5;
+    top: 0;
+    right: 100%;
+    height: 100%;
+    width: 100%;
+    background: #212529;
+}
+
+.pacetext {
+    @include defaultFlex;
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    font-family: 'Roboto';
+    transform: translateX(-50%);
+    font-size: 56px;
+    font-weight: bold;
+    color: skyblue;
+    opacity: 1;
+    -webkit-transition: left 0.3s linear;
+    -moz-transition: left 0.3s linear;
+    -ms-transition: left 0.3s linear;
+    -o-transition: left 0.3s linear;
+    transition: left 0.3s linear;
+}
